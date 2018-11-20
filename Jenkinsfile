@@ -11,6 +11,10 @@ node('master'){
 	stage('checkout') {
 		checkout scm
 	}
+	
+	stage('change permission') {
+		sh "chmod 777 /var/run/docker.sock"
+	}
 
     stage('Building image') {
 		sh "docker build -t spring-boot-jenkins-app:${env.BUILD_ID} -f Dockerfile ."
