@@ -1,9 +1,4 @@
-node('master'){
-
-	environment {
-		registry = "rahul619302/first-docker-project"
-	}
-	
+node('master'){	
     stage('clone'){
         git 'https://github.com/rahul619302/spring-boot-without-test.git'
     }
@@ -13,11 +8,6 @@ node('master'){
     }
 	
     stage('Building image') {
-		steps{
-			script {
-				def dockerImage =  docker.build registry + ":$BUILD_NUMBER"
-				dockerImage.push()
-			}
-		}
+		sh 'docker build . -t spring-boot-docker:1'
 	}
 }
