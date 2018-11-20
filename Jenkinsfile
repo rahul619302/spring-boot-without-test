@@ -17,7 +17,7 @@ node('master'){
 	}
 	
 	stage('run image') {
-		sh "docker run -d spring-boot-jenkins-app:${env.BUILD_ID}"
+		sh "docker run -dp 9066:9066  spring-boot-jenkins-app:${env.BUILD_ID}"
 	}
 
 }
