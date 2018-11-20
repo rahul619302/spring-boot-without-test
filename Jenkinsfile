@@ -17,6 +17,6 @@ node('master'){
 		docker.build("my-image:${env.BUILD_ID}")
 	}
 	stage('run container') {
-		sh 'docker run -it my-image:${env.BUILD_ID}'
+		bash 'docker run -it my-image:${env.BUILD_ID}'
 	}
 }
