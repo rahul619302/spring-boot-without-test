@@ -12,10 +12,6 @@ node('master'){
 		checkout scm
 	}
 	
-	stage('change permission') {
-		sh 'sudo chmod 777 /var/run/docker.sock'
-	}
-
     stage('Building image') {
 		sh "docker build -t spring-boot-jenkins-app:${env.BUILD_ID} -f Dockerfile ."
 	}
