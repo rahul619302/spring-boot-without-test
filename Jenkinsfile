@@ -13,7 +13,7 @@ node('master'){
 	}
 	
     stage('Building image') {
-		sh "docker build -t spring-boot-jenkins-app:${env.BUILD_ID} -f Dockerfile ."
+		sh "docker build -t spring-boot-jenkins-app:${env.BUILD_ID}"
 	}
 	
 	stage('run image') {
