@@ -9,6 +9,6 @@ node('master'){
 	
     stage('Building image') {
 		sh 'sudo chmod 777 /var/run/docker.sock'
-		sh 'docker build . -t spring-boot-docker:1'
+		sh 'docker build . -t spring-boot-docker:latest'
 	}
 }
