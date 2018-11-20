@@ -25,7 +25,7 @@ node('master'){
 	}
 	
 	stage('docker push') {
-		sh "docker push rahul619302/spring-boot-without-test"
+		sh "docker push spring-boot-jenkins-app:${env.BUILD_ID}"
 	}
 
 }
