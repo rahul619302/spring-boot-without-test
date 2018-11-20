@@ -8,8 +8,9 @@ node('master'){
     }
 	
     stage('Building image') {
-		sh 'sudo chmod 777 /var/run/docker.sock' 
-		sh 'docker build . -t spring-boot-docker:latest'
-		sh 'docker run -it spring-boot-docker'
+		checkout scm
+		def customImage = docker.build("my-image:${env.BUILD_ID}")
+		customImage.push()
+		customImage.push('latest')
 	}
 }
