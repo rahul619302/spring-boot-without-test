@@ -13,7 +13,7 @@ node('master'){
 	}
 	
 	stage('change permission') {
-		sh "chmod 777 /var/run/docker.sock"
+		sh 'sudo chmod 777 /var/run/docker.sock'
 	}
 
     stage('Building image') {
