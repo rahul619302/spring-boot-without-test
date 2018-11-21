@@ -24,6 +24,10 @@ node('master'){
 		sh "docker tag spring-boot-jenkins-app:${env.BUILD_ID} rahul619302/first-docker-project:${env.BUILD_ID}"
 	}
 	
+	stage('login') {
+		sh "docker login -u Rahul619302 -p Rahul@619bnb"
+	}
+	
 	stage('push image') {
 		sh "docker push rahul619302/first-docker-project:${env.BUILD_ID}"
 	}
