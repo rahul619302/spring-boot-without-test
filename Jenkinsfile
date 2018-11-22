@@ -21,7 +21,7 @@ node('master'){
 	}
 
 	stage('login') {
-		sh "docker login -u rahul619302 -p Rahul@619bnb"
+		sh "docker login -u rahul619302 -p ********"
 	}
 	
 	stage('push image') {
